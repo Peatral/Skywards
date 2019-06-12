@@ -16,12 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Skywards"
-run/main_scene="res://lobby.tscn"
+run/main_scene="res://scenes/lobby.tscn"
 config/icon="res://SkywardsLogo.png"
 
 [autoload]
 
-gamestate="*res://gamestate.gd"
+gamestate="*res://scripts/gamestate.gd"
 richpresence="*res://scenes/RichPresence.tscn"
 
 [display]

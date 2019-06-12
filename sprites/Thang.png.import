@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Thang.png-7a243c1831eade37cdfe0588b072cf9f.stex"
+path="res://.import/Thang.png-dae85d49cab0ee4a38eb01bb2ea2fb6e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Thang.png"
-dest_files=[ "res://.import/Thang.png-7a243c1831eade37cdfe0588b072cf9f.stex" ]
+source_file="res://sprites/Thang.png"
+dest_files=[ "res://.import/Thang.png-dae85d49cab0ee4a38eb01bb2ea2fb6e.stex" ]
 
 [params]
 
