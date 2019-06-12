@@ -7,8 +7,6 @@ var state = "Lobby"
 onready var startTimestamp = OS.get_unix_time()
 onready var joinSecret = ""
 
-var shutdown = false
-
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
 		shutdown()
@@ -87,16 +85,10 @@ func onRichPresenceSpectateGame(secret):
 	print("SECRET: ", secret)
 
 func run_callbacks():
-	if !shutdown:
-		update_richpresence()
-		RichPresence.run_callbacks()
-	else:
-		get_tree().quit()
+	update_richpresence()
+	RichPresence.run_callbacks()
 
 func shutdown():
 	gamestate.end_game()
 	RichPresence.shutdown()
-	print("game shutdown")
-	shutdown = true
-	$Timer.wait_time = 3
-	$Timer.start()
+	get_tree().call_deferred("quit")
