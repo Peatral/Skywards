@@ -126,7 +126,7 @@ func _process(delta):
 	if !is_on_floor():
 		anim = "Jump"
 	else:
-		if dir != 0:
+		if vel.x != 0:
 			anim = "Walking"
 		else:
 			anim = "Idle"

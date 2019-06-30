@@ -28,6 +28,10 @@ richpresence="*res://scenes/RichPresence.tscn"
 
 window/stretch/mode="2d"
 
+[gui]
+
+theme/custom="res://UI_Theme/UI_Theme.tres"
+
 [input]
 
 game_left={

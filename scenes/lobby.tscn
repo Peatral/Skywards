@@ -1,13 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://scripts/lobby.gd" type="Script" id=1]
+[ext_resource path="res://UI_Theme/UI_Theme.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/lobby.gd" type="Script" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
 
 [node name="lobby" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-script = ExtResource( 1 )
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="players" type="Panel" parent="."]
 visible = false
@@ -53,37 +56,37 @@ size_flags_horizontal = 2
 size_flags_vertical = 2
 
 [node name="ip_label" type="Label" parent="connect"]
-margin_left = 15.0
-margin_top = 66.0
-margin_right = 57.0
-margin_bottom = 80.0
+margin_left = 14.1197
+margin_top = 73.0421
+margin_right = 56.1197
+margin_bottom = 95.0421
 size_flags_horizontal = 2
 size_flags_vertical = 0
 text = "IP:"
 
 [node name="ip" type="LineEdit" parent="connect"]
-margin_left = 17.0
-margin_top = 85.0
-margin_right = 173.0
-margin_bottom = 109.0
+margin_left = 16.5598
+margin_top = 94.6828
+margin_right = 172.56
+margin_bottom = 126.683
 size_flags_horizontal = 2
 size_flags_vertical = 2
 text = "127.0.0.1"
 
 [node name="host" type="Button" parent="connect"]
-margin_left = 20.0
-margin_top = 31.0
-margin_right = 246.0
-margin_bottom = 51.0
+margin_left = 23.0
+margin_top = 7.0
+margin_right = 249.0
+margin_bottom = 69.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
 text = "Host"
 
 [node name="join" type="Button" parent="connect"]
-margin_left = 181.0
-margin_top = 87.0
-margin_right = 246.0
-margin_bottom = 107.0
+margin_left = 179.68
+margin_top = 73.1618
+margin_right = 259.68
+margin_bottom = 135.162
 size_flags_horizontal = 2
 size_flags_vertical = 2
 text = "Join"
@@ -103,6 +106,11 @@ margin_right = 55.0
 margin_bottom = 58.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
+
+[node name="avatar" type="TextureRect" parent="."]
+margin_right = 128.0
+margin_bottom = 128.0
+texture = ExtResource( 3 )
 [connection signal="pressed" from="players/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="connect/host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="connect/join" to="." method="_on_join_pressed"]

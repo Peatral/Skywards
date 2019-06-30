@@ -1,11 +1,16 @@
 extends Node
 
-var RichPresence
 onready var GodotRichPresence = load("res://bin/librichpresence.gdns")
+onready var RichPresence = GodotRichPresence.new()
+
 
 var state = "Lobby"
+var user_id = 0
+
 onready var startTimestamp = OS.get_unix_time()
 onready var joinSecret = ""
+
+onready var request = HTTPRequest.new()
 
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
@@ -14,8 +19,7 @@ func _notification(what):
 func _ready():
 	get_tree().set_auto_accept_quit(false)
 	
-	RichPresence = GodotRichPresence.new()
-	
+	add_child(request)
 	# SIGNALS
 	RichPresence.connect("ready", self, "onRichPresenceReady")
 	RichPresence.connect("disconnected", self, "onRichPresenceDisconnected")
@@ -24,8 +28,17 @@ func _ready():
 	RichPresence.connect("join_request", self, "onRichPresenceJoinRequest")
 	RichPresence.connect("spectate_game", self, "onRichPresenceSpectateGame")
 	
+	request.connect("request_completed", self, "on_request_completed")
+	
 	initialize()
 	update_richpresence()
+
+func requestAvatar(id, avatar):
+	request.download_file = str(id) + ".png"
+	request.request("https://cdn.discordapp.com/avatars/"+str(id)+"/"+str(avatar)+".png")
+
+func on_request_completed(result, response_code, headers, body):
+	get_node("/root/lobby/avatar").set_texture(load(str(user_id) + ".png"))
 
 func initialize():
 	RichPresence.init({
@@ -55,6 +68,9 @@ func onRichPresenceReady(user):
 	
 	gamestate.player_name = user["username"]
 	$Anim.play("RPC Ready")
+	
+	user_id = user["user_id"]
+	requestAvatar(user["user_id"], user["avatar"])
 
 func onRichPresenceDisconnected(code, message):
 	print(" ======= DISCONNECTED ======= ")
@@ -79,6 +95,8 @@ func onRichPresenceJoinRequest(requestUser):
 	print("USERNAME: ", requestUser["username"])
 	print("DISCRIMINATOR: ", requestUser["discriminator"])
 	print("AVATAR: ", requestUser["avatar"])
+	
+	RichPresence.reply(1)
 
 func onRichPresenceSpectateGame(secret):
 	print(" ======= SPECTATE GAME ======= ")
