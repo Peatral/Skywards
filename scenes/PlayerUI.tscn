@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://UI_Theme/UI_Theme.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/PlayerUI.gd" type="Script" id=2]
+[ext_resource path="res://sprites/kbbarb.png" type="Texture" id=3]
+[ext_resource path="res://sprites/kbbarf.png" type="Texture" id=4]
+
+[node name="PlayerUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1759.0
+margin_bottom = -1011.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="KBBar" type="TextureProgress" parent="."]
+margin_left = -160.0
+margin_right = 160.0
+margin_bottom = 80.0
+step = 0.01
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 4 )
+
+[node name="Tween" type="Tween" parent="KBBar"]

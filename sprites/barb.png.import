@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SkywardsLogo.png-984803fa5325b1cd018e3cce6f552aeb.stex"
+path="res://.import/barb.png-cb27bd6536a907ccf77b808ddeaf2d09.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SkywardsLogo.png"
-dest_files=[ "res://.import/SkywardsLogo.png-984803fa5325b1cd018e3cce6f552aeb.stex" ]
+source_file="res://sprites/barb.png"
+dest_files=[ "res://.import/barb.png-cb27bd6536a907ccf77b808ddeaf2d09.stex" ]
 
 [params]
 

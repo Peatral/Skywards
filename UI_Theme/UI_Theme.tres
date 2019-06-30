@@ -1,0 +1,67 @@
+[gd_resource type="Theme" load_steps=14 format=2]
+
+[ext_resource path="res://UI_Theme/Styleboxes/UI_Button_Disabled.tres" type="StyleBox" id=1]
+[ext_resource path="res://UI_Theme/Styleboxes/UI_Button_Focus.tres" type="StyleBox" id=2]
+[ext_resource path="res://UI_Theme/Styleboxes/UI_Button_Hover.tres" type="StyleBox" id=3]
+[ext_resource path="res://UI_Theme/Styleboxes/UI_Button_Normal.tres" type="StyleBox" id=4]
+[ext_resource path="res://UI_Theme/Styleboxes/UI_Button_Clicked.tres" type="StyleBox" id=5]
+[ext_resource path="res://UI_Theme/Sprites/UI_CheckBox_Checked.png" type="Texture" id=6]
+[ext_resource path="res://UI_Theme/Sprites/UI_CheckBox_Radio_Checked.png" type="Texture" id=7]
+[ext_resource path="res://UI_Theme/Sprites/UI_CheckBox_Radio_Unchecked.png" type="Texture" id=8]
+[ext_resource path="res://UI_Theme/Sprites/UI_CheckBox_Unchecked.png" type="Texture" id=9]
+[ext_resource path="res://UI_Theme/Sprites/UI_CheckButton_Unchecked.png" type="Texture" id=10]
+[ext_resource path="res://UI_Theme/Sprites/UI_CheckButton_Checked.png" type="Texture" id=11]
+[ext_resource path="res://UI_Theme/Styleboxes/UI_Stylebox.tres" type="StyleBox" id=12]
+[ext_resource path="res://UI_Theme/UI_Font.tres" type="DynamicFont" id=13]
+
+[resource]
+default_font = ExtResource( 13 )
+Button/colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 0.305882, 0.305882, 0.305882, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = ExtResource( 1 )
+Button/styles/focus = ExtResource( 2 )
+Button/styles/hover = ExtResource( 3 )
+Button/styles/normal = ExtResource( 4 )
+Button/styles/pressed = ExtResource( 5 )
+CheckBox/colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+CheckBox/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+CheckBox/colors/font_color_hover = Color( 0.305882, 0.305882, 0.305882, 1 )
+CheckBox/colors/font_color_hover_pressed = Color( 1, 1, 1, 1 )
+CheckBox/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+CheckBox/constants/check_vadjust = 0
+CheckBox/constants/hseparation = 4
+CheckBox/fonts/font = null
+CheckBox/icons/checked = ExtResource( 6 )
+CheckBox/icons/radio_checked = ExtResource( 7 )
+CheckBox/icons/radio_unchecked = ExtResource( 8 )
+CheckBox/icons/unchecked = ExtResource( 9 )
+CheckBox/styles/disabled = null
+CheckBox/styles/focus = null
+CheckBox/styles/hover = null
+CheckBox/styles/hover_pressed = null
+CheckBox/styles/normal = null
+CheckBox/styles/pressed = null
+CheckButton/colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+CheckButton/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+CheckButton/colors/font_color_hover = Color( 0.305882, 0.305882, 0.305882, 1 )
+CheckButton/colors/font_color_hover_pressed = Color( 1, 1, 1, 1 )
+CheckButton/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+CheckButton/constants/check_vadjust = 0
+CheckButton/constants/hseparation = 4
+CheckButton/fonts/font = null
+CheckButton/icons/off = ExtResource( 10 )
+CheckButton/icons/on = ExtResource( 11 )
+CheckButton/styles/disabled = null
+CheckButton/styles/focus = null
+CheckButton/styles/hover = null
+CheckButton/styles/hover_pressed = null
+CheckButton/styles/normal = null
+CheckButton/styles/pressed = null
+Panel/styles/panel = ExtResource( 12 )
+Panel/styles/panelf = null
+Panel/styles/panelnc = null
+PanelContainer/styles/panel = ExtResource( 12 )

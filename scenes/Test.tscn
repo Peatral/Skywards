@@ -1,37 +1,85 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://scenes/Thang.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Platforms.tres" type="TileSet" id=2]
+[ext_resource path="res://scripts/Map.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Characters/OG.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Platforms.tres" type="TileSet" id=3]
+[ext_resource path="res://scenes/Thang.tscn" type="PackedScene" id=4]
 
 
-[node name="Node2D" type="Node2D"]
-scale = Vector2( 3, 3 )
+[node name="Map" type="Node2D"]
+script = ExtResource( 1 )
 
-[node name="Thang" parent="." instance=ExtResource( 1 )]
-position = Vector2( 127.495, 72.2985 )
+[node name="Players" type="Node2D" parent="."]
 
-[node name="Thang2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 164.592, 155.842 )
+[node name="P1" parent="Players" instance=ExtResource( 2 )]
+position = Vector2( 313.307, 748.588 )
+
+[node name="P2" parent="Players" instance=ExtResource( 2 )]
+position = Vector2( 1210.18, 583.564 )
+playerID = 1
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource( 2 )
+scale = Vector2( 5, 5 )
+tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )
 cell_quadrant_size = 8
 format = 1
-tile_data = PoolIntArray( 14, 0, 65536, 65549, 0, 65537, 65550, 0, 327687, 65551, 0, 65539, 131083, 0, 1, 131084, 0, 2, 131085, 0, 262148, 131086, 0, 196610, 131087, 0, 262149, 131088, 0, 6, 196624, 0, 196608, 327684, 0, 1, 327685, 0, 2, 327686, 0, 2, 327687, 0, 3, 524302, 0, 1, 524303, 0, 2, 524304, 0, 196612, 524305, 0, 65539, 589840, 0, 196609, 589841, 0, 65543, 589842, 0, 65539, 655370, 0, 65537, 655371, 0, 65539, 655377, 0, 196609, 655378, 0, 196611, 720902, 0, 1, 720903, 0, 2, 720904, 0, 2, 720905, 0, 2, 720906, 0, 262148, 720907, 0, 262149, 720908, 0, 3 )
+tile_data = PoolIntArray( 262160, 0, 1, 262161, 0, 2, 262162, 0, 2, 262163, 0, 2, 262164, 0, 3, 327687, 0, 65537, 327688, 0, 65538, 327689, 0, 65539, 393223, 0, 196609, 393224, 0, 196610, 393225, 0, 196611, 524301, 0, 65537, 524302, 0, 65538, 524303, 0, 65538, 524304, 0, 65539, 589837, 0, 196609, 589838, 0, 196610, 589839, 0, 196610, 589840, 0, 196611, 655362, 0, 65537, 655363, 0, 65538, 655364, 0, 65538, 655365, 0, 65539, 655382, 0, 65537, 655383, 0, 65539, 720898, 0, 196609, 720899, 0, 196610, 720900, 0, 196610, 720901, 0, 196611, 720918, 0, 131073, 720919, 0, 131075, 786451, 0, 65537, 786452, 0, 65538, 786453, 0, 65538, 786454, 0, 327683, 786455, 0, 131075, 851987, 0, 196609, 851988, 0, 196610, 851989, 0, 196610, 851990, 0, 196610, 851991, 0, 196611 )
 
-[node name="players" type="Node2D" parent="."]
+[node name="Thangs" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 52.6164, 55.0081 )
 
-[node name="spawn_points" type="Node2D" parent="."]
+[node name="Thang" parent="Thangs" instance=ExtResource( 4 )]
+position = Vector2( 694.728, 367.807 )
 
-[node name="0" type="Position2D" parent="spawn_points"]
-position = Vector2( 85.9213, 68.8148 )
+[node name="Thang6" parent="Thangs" instance=ExtResource( 4 )]
+position = Vector2( 1044.95, 268.027 )
 
-[node name="1" type="Position2D" parent="spawn_points"]
-position = Vector2( 251.155, 120.523 )
+[node name="Thang2" parent="Thangs" instance=ExtResource( 4 )]
+position = Vector2( 778.865, 811.853 )
 
-[node name="2" type="Position2D" parent="spawn_points"]
-position = Vector2( 169.899, 158.235 )
+[node name="Thang3" parent="Thangs" instance=ExtResource( 4 )]
+position = Vector2( 1624.16, 903.153 )
 
-[node name="3" type="Position2D" parent="spawn_points"]
-position = Vector2( 191.671, 27.9925 )
+[node name="Thang4" parent="Thangs" instance=ExtResource( 4 )]
+position = Vector2( 1480.36, 252.049 )
+
+[node name="Thang5" parent="Thangs" instance=ExtResource( 4 )]
+position = Vector2( 1811.9, 731.389 )
+
+[node name="Thang7" parent="Thangs" instance=ExtResource( 4 )]
+position = Vector2( 1116.86, 911.142 )
+
+[node name="Thang8" parent="Thangs" instance=ExtResource( 4 )]
+position = Vector2( 309.966, 208.109 )
+
+[node name="Thang9" parent="Thangs" instance=ExtResource( 4 )]
+position = Vector2( 477.735, 280.011 )
+
+[node name="Thang10" parent="Thangs" instance=ExtResource( 4 )]
+position = Vector2( 825.257, 299.983 )
+
+[node name="Thang11" parent="Thangs" instance=ExtResource( 4 )]
+position = Vector2( 629.526, 112.241 )
+
+[node name="Thang12" parent="Thangs" instance=ExtResource( 4 )]
+position = Vector2( 1256.66, 216.099 )
+
+[node name="Thang13" parent="Thangs" instance=ExtResource( 4 )]
+position = Vector2( 957.076, 563.62 )
+
+[node name="Thang14" parent="Thangs" instance=ExtResource( 4 )]
+position = Vector2( 525.669, 663.483 )
+
+[node name="Thang15" parent="Thangs" instance=ExtResource( 4 )]
+position = Vector2( 254.043, 471.747 )
+
+[node name="Thang16" parent="Thangs" instance=ExtResource( 4 )]
+position = Vector2( 1528.29, 531.664 )
+
+[node name="Thang17" parent="Thangs" instance=ExtResource( 4 )]
+position = Vector2( 1352.53, 903.153 )
+
+[node name="Thang18" parent="Thangs" instance=ExtResource( 4 )]
+position = Vector2( 1720.03, 176.153 )

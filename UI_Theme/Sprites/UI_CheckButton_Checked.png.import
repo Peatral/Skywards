@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/SkywardsLogo.png-984803fa5325b1cd018e3cce6f552aeb.stex"
+path="res://.import/UI_CheckButton_Checked.png-9efb191575e6085050a2f8a66a34074d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://SkywardsLogo.png"
-dest_files=[ "res://.import/SkywardsLogo.png-984803fa5325b1cd018e3cce6f552aeb.stex" ]
+source_file="res://UI_Theme/Sprites/UI_CheckButton_Checked.png"
+dest_files=[ "res://.import/UI_CheckButton_Checked.png-9efb191575e6085050a2f8a66a34074d.stex" ]
 
 [params]
 

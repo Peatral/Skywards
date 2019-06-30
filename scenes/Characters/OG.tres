@@ -1,0 +1,63 @@
+[gd_resource type="AnimationNodeStateMachine" load_steps=16 format=2]
+
+[sub_resource type="AnimationNodeAnimation" id=1]
+animation = "Idle"
+
+[sub_resource type="AnimationNodeAnimation" id=2]
+animation = "Jump"
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "Punch"
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "Spawn"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "Walking"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=6]
+advance_condition = "Idle to Punch"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=7]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=8]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
+advance_condition = "Walking to Idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+advance_condition = "Idle to Walking"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+advance_condition = "Idle to Jump"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
+advance_condition = "Jump to Idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+advance_condition = "Jump to Punch"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
+advance_condition = "walking to Punch"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=15]
+advance_condition = "Walking to Jump"
+
+[resource]
+states/Idle/node = SubResource( 1 )
+states/Idle/position = Vector2( 325, 137 )
+states/Jump/node = SubResource( 2 )
+states/Jump/position = Vector2( 154, 287 )
+states/Punch/node = SubResource( 3 )
+states/Punch/position = Vector2( 154, 137 )
+states/Spawn/node = SubResource( 4 )
+states/Spawn/position = Vector2( 325, 44 )
+states/Walking/node = SubResource( 5 )
+states/Walking/position = Vector2( 325, 287 )
+transitions = [ "Idle", "Punch", SubResource( 6 ), "Punch", "Idle", SubResource( 7 ), "Spawn", "Idle", SubResource( 8 ), "Walking", "Idle", SubResource( 9 ), "Idle", "Walking", SubResource( 10 ), "Idle", "Jump", SubResource( 11 ), "Jump", "Idle", SubResource( 12 ), "Jump", "Punch", SubResource( 13 ), "Walking", "Punch", SubResource( 14 ), "Walking", "Jump", SubResource( 15 ) ]
+start_node = "Spawn"
+graph_offset = Vector2( -256, 108 )
