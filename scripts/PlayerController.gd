@@ -13,6 +13,10 @@ var hclt = 0
 
 var knockback = 0 setget setKnockback
 
+
+var lastVel = vel
+onready var lastOnFloor = is_on_floor()
+
 onready var start = position
 
 export var  acc = 10
@@ -31,11 +35,14 @@ export var particleScene = preload("res://Particles.tscn")
 export(int, "Player 1", "Player 2") var playerID = 0
 
 signal knockbackChanged
+signal jumpCounterChanged
+
 signal attackJustPressed
 signal specialJustPressed
 signal specialJustReleased
+
 signal died
-signal jumpCounterChanged
+signal landed
 
 func setJumpC(val):
 	jmpc = val
@@ -49,18 +56,7 @@ func applyImpulse(d):
 		dir = d
 
 func getAction(action):
-	match action:
-		"right":
-			return "game_right" if playerID == 0 else "game_right_2"
-		"left":
-			return "game_left" if playerID == 0 else "game_left_2"
-		"jump":
-			return "game_jump" if playerID == 0 else "game_jump_2"
-		"attack":
-			return "game_attack" if playerID == 0 else "game_attack_2"
-		"special":
-			return "game_special" if playerID == 0 else "game_special_2"
-	return ""
+	return "game_" + action + "_" + String(playerID)
 
 func getDirection():
 	return Input.get_action_strength(getAction("right"))-Input.get_action_strength(getAction("left"))
@@ -89,7 +85,7 @@ func setKnockback(val):
 	knockback = val
 	emit_signal("knockbackChanged", knockback)
 
-func increaseKnockBack():
+func increaseKnockback():
 	self.knockback = min(knockback+1, 100)
 
 func _ready():
@@ -163,8 +159,14 @@ func _process(delta):
 	if Input.is_action_just_released(getAction("special")):
 		emit_signal("specialJustReleased")
 	
+	if lastOnFloor != is_on_floor() && is_on_floor():
+		emit_signal("landed", lastVel)
+	
 	if position.y < 0 || position.y > 5000 || (is_on_ceiling() && vel.y < -1000):
 		die()
+	
+	lastOnFloor = is_on_floor()
+	lastVel = vel
 
 
 
